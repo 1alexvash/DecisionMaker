@@ -1,15 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-const Home = () => {
-  return "Home";
-};
+import HomeScreen from "./screens/HomeScreen";
 
 const App = () => {
   return (
     <div className="App">
       <Router>
-        <Route path="/" component={Home}></Route>
+        <Route path="/" component={HomeScreen}></Route>
       </Router>
     </div>
   );
