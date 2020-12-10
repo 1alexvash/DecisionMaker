@@ -19,6 +19,7 @@ const App = () => {
   );
 };
 
+// eslint-disable-next-line
 export default () => (
   <StoreProvider store={store}>
     <App />
