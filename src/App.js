@@ -1,12 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { createStore, StoreProvider, useStoreState } from "easy-peasy";
+import { StoreProvider, useStoreState } from "easy-peasy";
 
 import HomeScreen from "./screens/HomeScreen";
 
-const store = createStore({
-  hello: "hello",
-});
+import store from "./store";
 
 const App = () => {
   const { hello } = useStoreState((state) => state);
