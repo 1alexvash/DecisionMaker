@@ -1,7 +1,18 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+const Home = () => {
+  return "Home";
+};
 
 const App = () => {
-  return <div className="App">bad</div>;
+  return (
+    <div className="App">
+      <Router>
+        <Route path="/" component={Home}></Route>
+      </Router>
+    </div>
+  );
 };
 
 export default App;
