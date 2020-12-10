@@ -1,11 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { createStore, StoreProvider, useStoreState } from "easy-peasy";
 
 import HomeScreen from "./screens/HomeScreen";
 
+const store = createStore({
+  hello: "hello",
+});
+
 const App = () => {
+  const { hello } = useStoreState((state) => state);
+
   return (
     <div className="App">
+      {hello}
       <Router>
         <Route path="/" component={HomeScreen}></Route>
       </Router>
@@ -13,4 +21,8 @@ const App = () => {
   );
 };
 
-export default App;
+export default () => (
+  <StoreProvider store={store}>
+    <App />
+  </StoreProvider>
+);
