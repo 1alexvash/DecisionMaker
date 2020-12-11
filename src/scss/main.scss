@@ -48,5 +48,21 @@ body {
         }
       }
     }
+    .plus {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      img {
+        width: 80px;
+        box-shadow: 2px 2px 4px black;
+        border-radius: 50%;
+        transition: 0.3s;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+    }
   }
 }

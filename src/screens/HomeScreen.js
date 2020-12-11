@@ -1,5 +1,7 @@
 import React from "react";
 
+import plusImg from "../images/plus.png";
+
 const decisions = [
   {
     firstChoice: {
@@ -34,22 +36,29 @@ const decisions = [
 ];
 
 const HomeScreen = () => {
+  const decisionsComponent = (
+    <div className="decisions">
+      {decisions.map((decision) => (
+        <div className="decision">
+          <div className="first-decision-score">
+            {decision.firstChoice.score}
+          </div>
+          <div className="choices">
+            {decision.firstChoice.name} VS {decision.secondChoice.name}
+          </div>
+          <div className="second-decision-score">
+            {decision.secondChoice.score}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <div className="Home">
-      <div className="decisions">
-        {decisions.map((decision) => (
-          <div className="decision">
-            <div className="first-decision-score">
-              {decision.firstChoice.score}
-            </div>
-            <div className="choices">
-              {decision.firstChoice.name} VS {decision.secondChoice.name}
-            </div>
-            <div className="second-decision-score">
-              {decision.secondChoice.score}
-            </div>
-          </div>
-        ))}
+      {decisionsComponent}
+      <div className="plus">
+        <img src={plusImg} alt="" />
       </div>
     </div>
   );
