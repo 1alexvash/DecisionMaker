@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import plusImg from "../images/plus.png";
 
@@ -36,6 +36,8 @@ const decisions = [
 ];
 
 const HomeScreen = () => {
+  const [modal, setModal] = useState(false);
+
   const decisionsComponent = (
     <div className="decisions">
       {decisions.map((decision) => (
@@ -58,7 +60,7 @@ const HomeScreen = () => {
     <div className="Home">
       {decisionsComponent}
       <div className="plus">
-        <img src={plusImg} alt="" />
+        <img src={plusImg} onClick={() => setModal(true)} alt="" />
       </div>
     </div>
   );
