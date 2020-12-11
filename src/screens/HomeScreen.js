@@ -38,6 +38,8 @@ const decisions = [
 
 const HomeScreen = () => {
   const [modal, setModal] = useState(false);
+  const [firstOption, setFirstOption] = useState("");
+  const [secondOption, setSecondOption] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -85,10 +87,24 @@ const HomeScreen = () => {
         <form onSubmit={submitHandler}>
           <div className="options">
             <label htmlFor="option1">First Option:</label>
-            <input type="text" id="option1" placeholder="Apples" required />
+            <input
+              type="text"
+              id="option1"
+              placeholder="Apples"
+              value={firstOption}
+              onChange={(e) => setFirstOption(e.target.value)}
+              required
+            />
 
             <label htmlFor="option2">Second Option:</label>
-            <input type="text" id="option2" placeholder="Oranges" required />
+            <input
+              type="text"
+              id="option2"
+              placeholder="Oranges"
+              value={secondOption}
+              onChange={(e) => setSecondOption(e.target.value)}
+              required
+            />
           </div>
           <button type="submit" className="submit-handler">
             Add decision
