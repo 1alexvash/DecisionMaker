@@ -1,2 +1,3 @@
 Build HomeScreen interface
 Bind store.js logic to it
+Make some margin for the plus button so it is always visible

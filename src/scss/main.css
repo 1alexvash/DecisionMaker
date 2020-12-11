@@ -116,8 +116,8 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .App .Home .modal.show {
@@ -133,8 +133,8 @@ body {
   border-radius: 4px;
   top: 50%;
   left: 50%;
-  width: 50%;
-  height: 50%;
+  width: 280px;
+  padding: 20px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background: white;
@@ -147,5 +147,34 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 48px;
+  width: 40px;
+}
+
+.App .Home .modal .content form .options label {
+  display: block;
+}
+
+.App .Home .modal .content form .options input {
+  border: 1px solid black;
+  padding: 4px 8px;
+  width: 80%;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.App .Home .modal .content form .submit-handler {
+  cursor: pointer;
+  margin-top: 10px;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  background: -webkit-gradient(linear, left top, left bottom, from(lightgreen), to(#009a00));
+  background: linear-gradient(lightgreen, #009a00);
+  border-radius: 4px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.App .Home .modal .content form .submit-handler:hover {
+  border-radius: 16px;
 }

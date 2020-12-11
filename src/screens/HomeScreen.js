@@ -39,6 +39,10 @@ const decisions = [
 const HomeScreen = () => {
   const [modal, setModal] = useState(false);
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
   const decisionsComponent = (
     <div className="decisions">
       {decisions.map((decision) => (
@@ -59,7 +63,12 @@ const HomeScreen = () => {
 
   const plusComponent = (
     <div className="plus">
-      <img src={plusImg} onClick={() => setModal(true)} alt="" />
+      <img
+        src={plusImg}
+        onClick={() => setModal(true)}
+        alt=""
+        title="open the modal"
+      />
     </div>
   );
 
@@ -70,8 +79,21 @@ const HomeScreen = () => {
           src={crossImg}
           className="cross"
           onClick={() => setModal(false)}
+          title="close the window"
           alt=""
         />
+        <form onSubmit={submitHandler}>
+          <div className="options">
+            <label htmlFor="option1">First Option:</label>
+            <input type="text" id="option1" placeholder="Apples" required />
+
+            <label htmlFor="option2">Second Option:</label>
+            <input type="text" id="option2" placeholder="Oranges" required />
+          </div>
+          <button type="submit" className="submit-handler">
+            Add decision
+          </button>
+        </form>
       </div>
     </div>
   );
