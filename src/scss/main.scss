@@ -1,5 +1,52 @@
 @import "reset";
 @import "responsive";
 
+body {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+}
+
 .App {
+  width: 360px;
+  margin: auto;
+  .Header {
+    padding: 10px 15px;
+    background: linear-gradient(white, lightgray);
+  }
+  .Home {
+    padding: 20px;
+    .decisions {
+      .decision {
+        padding: 10px;
+        background: linear-gradient((white, #999));
+        border-bottom: 2px solid #444;
+        box-shadow: 1px 2px 12px #333;
+
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .first-decision-score,
+        .second-decision-score {
+          border: 1px solid black;
+          padding: 16px;
+          text-shadow: 2px 2px 3px #444;
+          color: white;
+          user-select: none;
+        }
+        .first-decision-score {
+          background: linear-gradient(45deg, green, lightgreen);
+          border-top-left-radius: 25px;
+          border-bottom-right-radius: 25px;
+        }
+        .choices {
+          text-align: center;
+        }
+        .second-decision-score {
+          background: linear-gradient(45deg, red, purple);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
 }

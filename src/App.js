@@ -1,20 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { StoreProvider, useStoreState, useStoreActions } from "easy-peasy";
+import { StoreProvider } from "easy-peasy";
 
 import HomeScreen from "./screens/HomeScreen";
 
 import store from "./store";
 
-const App = () => {
-  const { hello } = useStoreState((state) => state);
-  const { sayHello } = useStoreActions((actions) => actions);
+import "./scss/main.css";
 
+const App = () => {
   return (
     <div className="App">
-      {hello}
-      <button onClick={() => sayHello()}>Push Me</button>
       <Router>
+        <header className="Header">Decision Maker</header>
         <Route path="/" component={HomeScreen}></Route>
       </Router>
     </div>
