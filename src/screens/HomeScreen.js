@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import plusImg from "../images/plus.png";
+import crossImg from "../images/cross.png";
 
 const decisions = [
   {
@@ -56,12 +57,25 @@ const HomeScreen = () => {
     </div>
   );
 
+  const plusComponent = (
+    <div className="plus">
+      <img src={plusImg} onClick={() => setModal(true)} alt="" />
+    </div>
+  );
+
+  const modalComponent = (
+    <div className={`modal ${modal ? "show" : "hide"}`}>
+      <div className="content">
+        <img src={crossImg} onClick={() => setModal(true)} alt="" />
+      </div>
+    </div>
+  );
+
   return (
     <div className="Home">
       {decisionsComponent}
-      <div className="plus">
-        <img src={plusImg} onClick={() => setModal(true)} alt="" />
-      </div>
+      {plusComponent}
+      {modalComponent}
     </div>
   );
 };
