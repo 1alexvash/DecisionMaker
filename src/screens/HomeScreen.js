@@ -43,6 +43,11 @@ const HomeScreen = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    if (firstOption === secondOption) {
+      alert("Options can't have same names");
+      return;
+    }
   };
 
   const decisionsComponent = (
@@ -90,21 +95,22 @@ const HomeScreen = () => {
             <input
               type="text"
               id="option1"
-              placeholder="Apples"
+              placeholder="Apples 🍏"
               value={firstOption}
               onChange={(e) => setFirstOption(e.target.value)}
               required
             />
-
+            <div className="versus"></div>
             <label htmlFor="option2">Second Option:</label>
             <input
               type="text"
               id="option2"
-              placeholder="Oranges"
+              placeholder="Oranges 🍊"
               value={secondOption}
               onChange={(e) => setSecondOption(e.target.value)}
               required
             />
+            <div className="versus"></div>
           </div>
           <button type="submit" className="submit-handler">
             Add decision

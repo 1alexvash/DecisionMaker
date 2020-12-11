@@ -163,6 +163,11 @@ body {
   margin-bottom: 10px;
 }
 
+.App .Home .modal .content form .versus {
+  border-bottom: 1px solid lightblue;
+  margin-bottom: 10px;
+}
+
 .App .Home .modal .content form .submit-handler {
   cursor: pointer;
   margin-top: 10px;
