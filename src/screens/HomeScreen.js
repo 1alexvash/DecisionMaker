@@ -66,7 +66,12 @@ const HomeScreen = () => {
   const modalComponent = (
     <div className={`modal ${modal ? "show" : "hide"}`}>
       <div className="content">
-        <img src={crossImg} onClick={() => setModal(true)} alt="" />
+        <img
+          src={crossImg}
+          className="cross"
+          onClick={() => setModal(false)}
+          alt=""
+        />
       </div>
     </div>
   );
