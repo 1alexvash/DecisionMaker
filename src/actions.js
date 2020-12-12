@@ -14,6 +14,9 @@ const actions = {
       },
     });
   }),
+  setCurrentDecision: action((state, payload) => {
+    state.decision = payload;
+  }),
 };
 
 export default actions;

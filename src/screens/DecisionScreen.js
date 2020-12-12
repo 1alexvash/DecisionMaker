@@ -1,24 +1,23 @@
 import React, { useEffect } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
-import { useStoreState } from "easy-peasy";
-
-const DecisionScreen = ({ match }) => {
-  const { decisions } = useStoreState((state) => state);
-  let history = useHistory();
+const DecisionScreen = ({ match, history }) => {
+  const { decisions, decision } = useStoreState((state) => state);
+  const { setCurrentDecision } = useStoreActions((actions) => actions);
 
   useEffect(() => {
     const id = match.params.id;
 
     const decision = decisions.find((decision) => decision.url === id);
+    setCurrentDecision(decision);
 
     if (!decision) {
       history.push("/");
     }
-  }, [match, decisions]);
+  }, [match, decisions, history]);
 
-  return <div>Let's display a decision</div>;
+  return <div>{decision.firstChoice.name}</div>;
 };
 
 export default DecisionScreen;
