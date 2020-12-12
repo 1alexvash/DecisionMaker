@@ -5,7 +5,7 @@ import { StoreProvider } from "easy-peasy";
 import HomeScreen from "./screens/HomeScreen";
 import DecisionScreen from "./screens/DecisionScreen";
 
-import store from "./store";
+import store from "./store/store";
 
 import "./scss/main.css";
 
