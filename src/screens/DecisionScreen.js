@@ -15,7 +15,11 @@ const DecisionScreen = ({ match }) => {
   }
 
   return (
-    <div>
+    <div className="Decision">
+      <form className="new-factor">
+        <input type="text" placeholder="New Factor" />
+        <button type="button">Add New Factor</button>
+      </form>
       {decision.firstChoice.name} / {decision.firstChoice.name}
     </div>
   );

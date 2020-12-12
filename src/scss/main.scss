@@ -131,4 +131,31 @@ body {
       }
     }
   }
+  .Decision {
+    .new-factor {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      input,
+      button {
+        padding: 5px 10px;
+        font-size: 16px;
+        border-radius: 4px;
+      }
+      input {
+        border: 1px solid black;
+      }
+      button {
+        cursor: pointer;
+        margin-left: 20px;
+        background: linear-gradient(darken(red, 5%), #444);
+        text-shadow: 1px 2px 5px #333;
+        color: white;
+        transition: 0.3s;
+        &:hover {
+          border-radius: 12px;
+        }
+      }
+    }
+  }
 }

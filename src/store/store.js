@@ -4,7 +4,7 @@ import actions from "./actions";
 
 const debug = (data) => console.log(JSON.parse(JSON.stringify(data)));
 
-debug("Hello");
+debug("=== Initialization ===");
 
 const store = createStore({
   ...state,
