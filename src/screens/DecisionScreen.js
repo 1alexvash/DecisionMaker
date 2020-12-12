@@ -1,21 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useStoreState, useStoreActions } from "easy-peasy";
+import { useStoreState } from "easy-peasy";
+import { Redirect } from "react-router-dom";
 
-const DecisionScreen = ({ match, history }) => {
-  const { decisions, decision } = useStoreState((state) => state);
-  const { setCurrentDecision } = useStoreActions((actions) => actions);
+const DecisionScreen = ({ match }) => {
+  const { decisions } = useStoreState((state) => state);
 
-  useEffect(() => {
-    const id = match.params.id;
+  const decision = decisions.find(
+    (decision) => decision.url === match.params.id
+  );
 
-    const decision = decisions.find((decision) => decision.url === id);
-    setCurrentDecision(decision);
-
-    if (!decision) {
-      history.push("/");
-    }
-  }, [match, decisions, history]);
+  if (!decision) {
+    return <Redirect to="/" />;
+  }
 
   return <div>{decision.firstChoice.name}</div>;
 };

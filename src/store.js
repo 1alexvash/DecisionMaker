@@ -41,7 +41,6 @@ const store = createStore({
       },
     },
   ],
-  decision: {},
 
   ...actions,
 });
