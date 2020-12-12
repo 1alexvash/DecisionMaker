@@ -8,6 +8,7 @@ debug("Hello");
 const store = createStore({
   decisions: [
     {
+      url: "test",
       firstChoice: {
         score: 35,
         name: "Apples",
@@ -18,6 +19,7 @@ const store = createStore({
       },
     },
     {
+      url: "test2",
       firstChoice: {
         score: 217,
         name: "Detroit",
@@ -28,6 +30,7 @@ const store = createStore({
       },
     },
     {
+      url: "test3",
       firstChoice: {
         score: 90,
         name: "Boxing",

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 import plusImg from "../images/plus.png";
@@ -28,9 +30,10 @@ const HomeScreen = () => {
   const decisionsComponent = (
     <div className="decisions">
       {decisions.map((decision) => (
-        <div
+        <Link
+          to={`/decision/${decision.url}`}
           className="decision"
-          key={decision.firstChoice.name + decision.secondChoice.name}
+          key={decision.url}
         >
           <div className="first-decision-score">
             {decision.firstChoice.score}
@@ -41,7 +44,7 @@ const HomeScreen = () => {
           <div className="second-decision-score">
             {decision.secondChoice.score}
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
