@@ -14,7 +14,11 @@ const DecisionScreen = ({ match }) => {
     return <Redirect to="/" />;
   }
 
-  return <div>{decision.firstChoice.name}</div>;
+  return (
+    <div>
+      {decision.firstChoice.name} / {decision.firstChoice.name}
+    </div>
+  );
 };
 
 export default DecisionScreen;
