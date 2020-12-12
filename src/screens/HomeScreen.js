@@ -1,45 +1,17 @@
 import React, { useState } from "react";
 
+import { useStoreState, useStoreActions } from "easy-peasy";
+
 import plusImg from "../images/plus.png";
 import crossImg from "../images/cross.png";
-
-const decisions = [
-  {
-    firstChoice: {
-      score: 35,
-      name: "Apples",
-    },
-    secondChoice: {
-      score: 25,
-      name: "Oranges",
-    },
-  },
-  {
-    firstChoice: {
-      score: 217,
-      name: "Detroit",
-    },
-    secondChoice: {
-      score: 183,
-      name: "Connecticut",
-    },
-  },
-  {
-    firstChoice: {
-      score: 90,
-      name: "Boxing",
-    },
-    secondChoice: {
-      score: 40,
-      name: "Futbool",
-    },
-  },
-];
 
 const HomeScreen = () => {
   const [modal, setModal] = useState(false);
   const [firstOption, setFirstOption] = useState("");
   const [secondOption, setSecondOption] = useState("");
+
+  const { decisions } = useStoreState((state) => state);
+  const { addDecision } = useStoreActions((actions) => actions);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -48,12 +20,18 @@ const HomeScreen = () => {
       alert("Options can't have same names");
       return;
     }
+
+    addDecision({ firstOption, secondOption });
+    setModal(false);
   };
 
   const decisionsComponent = (
     <div className="decisions">
       {decisions.map((decision) => (
-        <div className="decision">
+        <div
+          className="decision"
+          key={decision.firstChoice.name + decision.secondChoice.name}
+        >
           <div className="first-decision-score">
             {decision.firstChoice.score}
           </div>

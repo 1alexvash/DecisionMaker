@@ -1,8 +1,17 @@
 import { action } from "easy-peasy";
 
 const actions = {
-  sayHello: action((state, payload) => {
-    alert("hello!!!!!!");
+  addDecision: action((state, { firstOption, secondOption }) => {
+    state.decisions.push({
+      firstChoice: {
+        score: 0,
+        name: firstOption,
+      },
+      secondChoice: {
+        score: 0,
+        name: secondOption,
+      },
+    });
   }),
 };
 
