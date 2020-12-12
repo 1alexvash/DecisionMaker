@@ -118,9 +118,11 @@ body {
             margin-top: 10px;
             border: 1px solid #333;
             padding: 8px 16px;
-            background: linear-gradient(lightgreen, lighten(green, 5%));
+            background: linear-gradient(darken(lightgreen, 5%), green);
             border-radius: 4px;
             transition: 0.3s;
+            color: white;
+            text-shadow: 1px 2px 5px #333;
             &:hover {
               border-radius: 16px;
             }
