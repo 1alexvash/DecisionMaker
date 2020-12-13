@@ -19,7 +19,17 @@ const actions = {
   }),
   updateFactorsProperty: action(
     (state, { value, decisionIndex, factorIndex, property }) => {
-      state.decisions[decisionIndex].factors[factorIndex][property] = value;
+      const decision = state.decisions[decisionIndex];
+      decision.factors[factorIndex][property] = value;
+
+      decision.firstChoice.score = decision.factors.reduce(
+        (prev, cur) => prev + cur.firstChoice * cur.importance,
+        0
+      );
+      decision.secondChoice.score = decision.factors.reduce(
+        (prev, cur) => prev + cur.secondChoice * cur.importance,
+        0
+      );
     }
   ),
   newFactorSave: action((state, { index, name }) => {

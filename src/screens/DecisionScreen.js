@@ -48,7 +48,7 @@ const DecisionScreen = ({ match }) => {
             value={factor.importance}
             onChange={(e) =>
               updateFactorsProperty({
-                value: e.target.value,
+                value: parseInt(e.target.value),
                 decisionIndex: decisions.indexOf(decision),
                 factorIndex: index,
                 property: "importance",
@@ -64,7 +64,7 @@ const DecisionScreen = ({ match }) => {
             value={factor.firstChoice}
             onChange={(e) =>
               updateFactorsProperty({
-                value: e.target.value,
+                value: parseInt(e.target.value),
                 decisionIndex: decisions.indexOf(decision),
                 factorIndex: index,
                 property: "firstChoice",
@@ -80,7 +80,7 @@ const DecisionScreen = ({ match }) => {
             value={factor.secondChoice}
             onChange={(e) =>
               updateFactorsProperty({
-                value: e.target.value,
+                value: parseInt(e.target.value),
                 decisionIndex: decisions.indexOf(decision),
                 factorIndex: index,
                 property: "secondChoice",
@@ -107,20 +107,10 @@ const DecisionScreen = ({ match }) => {
 
   const resultsComponent = (
     <div className="results">
-      {/* <p>{decision.firstChoice.name}</p>
-      <p>
-        {factors.reduce(
-          (prev, cur) => prev + cur.firstChoice * cur.importance,
-          0
-        )}
-      </p>
+      <p>{decision.firstChoice.name}</p>
+      <p>{decision.firstChoice.score}</p>
       <p>{decision.secondChoice.name}</p>
-      <p>
-        {factors.reduce(
-          (prev, cur) => prev + cur.secondChoice * cur.importance,
-          0
-        )}
-      </p> */}
+      <p>{decision.secondChoice.score}</p>
     </div>
   );
 
