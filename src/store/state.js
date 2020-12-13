@@ -10,28 +10,14 @@ const state = {
         score: 25,
         name: "Oranges",
       },
-    },
-    {
-      url: "test2",
-      firstChoice: {
-        score: 217,
-        name: "Detroit",
-      },
-      secondChoice: {
-        score: 183,
-        name: "Connecticut",
-      },
-    },
-    {
-      url: "test3",
-      firstChoice: {
-        score: 90,
-        name: "Boxing",
-      },
-      secondChoice: {
-        score: 40,
-        name: "Futbool",
-      },
+      factors: [
+        {
+          name: "Weather",
+          importance: 0,
+          firstChoice: 0,
+          secondChoice: 0,
+        },
+      ],
     },
   ],
 };

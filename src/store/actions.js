@@ -17,6 +17,19 @@ const actions = {
   setCurrentDecision: action((state, payload) => {
     state.decision = payload;
   }),
+  updateFactorsProperty: action(
+    (state, { value, decisionIndex, factorIndex, property }) => {
+      state.decisions[decisionIndex].factors[factorIndex][property] = value;
+    }
+  ),
+  newFactorSave: action((state, { index, name }) => {
+    state.decisions[index].factors.push({
+      name,
+      importance: 2,
+      firstChoice: 0,
+      secondChoice: 0,
+    });
+  }),
 };
 
 export default actions;
