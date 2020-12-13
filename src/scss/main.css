@@ -194,6 +194,10 @@ body {
   background: linear-gradient(#efefef, #d9d9d9);
 }
 
+.App .Decision .factors .factor input[type="range"] {
+  cursor: pointer;
+}
+
 .App .Decision .new-factor {
   margin-top: 20px;
   display: -webkit-box;

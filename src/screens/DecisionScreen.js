@@ -56,7 +56,10 @@ const DecisionScreen = ({ match }) => {
             }
           />
 
-          <p>Dalas: {factor.firstChoice * factor.importance}</p>
+          <p>
+            {decision.firstChoice.name}:{" "}
+            {factor.firstChoice * factor.importance}
+          </p>
           <input
             type="range"
             min="0"
@@ -72,7 +75,10 @@ const DecisionScreen = ({ match }) => {
             }
           />
 
-          <p>Detrois: {factor.secondChoice * factor.importance}</p>
+          <p>
+            {decision.secondChoice.name}:{" "}
+            {factor.secondChoice * factor.importance}
+          </p>
           <input
             type="range"
             min="0"

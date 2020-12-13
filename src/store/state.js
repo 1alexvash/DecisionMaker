@@ -1,25 +1,29 @@
-const state = {
-  decisions: [
-    {
-      url: "test",
-      firstChoice: {
-        score: 35,
-        name: "Apples",
-      },
-      secondChoice: {
-        score: 25,
-        name: "Oranges",
-      },
-      factors: [
-        {
-          name: "Weather",
-          importance: 0,
-          firstChoice: 0,
-          secondChoice: 0,
-        },
-      ],
+const defaultDecisions = [
+  {
+    url: "test",
+    firstChoice: {
+      score: 0,
+      name: "Apples",
     },
-  ],
+    secondChoice: {
+      score: 0,
+      name: "Oranges",
+    },
+    factors: [
+      {
+        name: "Weather",
+        importance: 0,
+        firstChoice: 0,
+        secondChoice: 0,
+      },
+    ],
+  },
+];
+
+const state = {
+  decisions: localStorage.decisions
+    ? JSON.parse(localStorage.decisions)
+    : defaultDecisions,
 };
 
 export default state;
