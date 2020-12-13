@@ -18,59 +18,90 @@ const DecisionScreen = ({ match }) => {
       secondChoice: 0,
     },
   ]);
+  const [newFactorName, setNewFactorName] = useState("");
 
   if (!decision) {
     return <Redirect to="/" />;
   }
 
   const updateFactory = (e, index, prop) => {
-    const newFactors = [...factors];
-    newFactors[index][prop] = e.target.value;
-    setFactors(newFactors);
+    const updatedFactors = [...factors];
+    updatedFactors[index][prop] = e.target.value;
+    setFactors(updatedFactors);
   };
+
+  const addNewFactor = (e) => {
+    e.preventDefault();
+
+    const updatedFactors = [...factors];
+    updatedFactors.push({
+      name: newFactorName,
+      importance: 2,
+      firstChoice: 0,
+      secondChoice: 0,
+    });
+
+    setFactors(updatedFactors);
+
+    setNewFactorName("");
+  };
+
+  const factorsComponent = (
+    <div className="factors">
+      {factors.map((factor, index) => (
+        <div className="factor" key={index}>
+          <p>
+            {factor.name}: {factor.importance}
+          </p>
+          <input
+            type="range"
+            min="0"
+            max="10"
+            title="Importance"
+            value={factor.importance}
+            onChange={(e) => updateFactory(e, index, "importance")}
+          />
+
+          <p>Dalas: {factor.firstChoice * factor.importance}</p>
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value={factor.firstChoice}
+            onChange={(e) => updateFactory(e, index, "firstChoice")}
+          />
+
+          <p>Detrois: {factor.secondChoice * factor.importance}</p>
+          <input
+            type="range"
+            min="0"
+            max="10"
+            value={factor.secondChoice}
+            onChange={(e) => updateFactory(e, index, "secondChoice")}
+          />
+        </div>
+      ))}
+    </div>
+  );
+
+  const newFactorComponent = (
+    <form className="new-factor" onSubmit={addNewFactor}>
+      <input
+        type="text"
+        placeholder="New Factor"
+        required
+        value={newFactorName}
+        onChange={(e) => setNewFactorName(e.target.value)}
+      />
+      <button type="submit">Add New Factor</button>
+    </form>
+  );
 
   return (
     <div className="Decision">
-      <div className="factors">
-        {factors.map((factor, index) => (
-          <div className="factor" key={index}>
-            <p>
-              {factor.name}: {factor.importance}
-            </p>
-            <input
-              type="range"
-              min="0"
-              max="10"
-              title="Importance"
-              value={factor.importance}
-              onChange={(e) => updateFactory(e, index, "importance")}
-            />
-
-            <p>Dalas: {factor.firstChoice * factor.importance}</p>
-            <input
-              type="range"
-              min="0"
-              max="10"
-              value={factor.firstChoice}
-              onChange={(e) => updateFactory(e, index, "firstChoice")}
-            />
-
-            <p>Detrois: {factor.secondChoice * factor.importance}</p>
-            <input
-              type="range"
-              min="0"
-              max="10"
-              value={factor.secondChoice}
-              onChange={(e) => updateFactory(e, index, "secondChoice")}
-            />
-          </div>
-        ))}
-      </div>
+      {factorsComponent}
       ### total scorll at the bottom
-      <form className="new-factor">
-        <input type="text" placeholder="New Factor" />
-        <button type="button">Add New Factor</button>
-      </form>
+      {newFactorComponent}
       {decision.firstChoice.name} / {decision.firstChoice.name}
     </div>
   );
