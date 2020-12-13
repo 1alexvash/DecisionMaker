@@ -97,17 +97,30 @@ const DecisionScreen = ({ match }) => {
     </form>
   );
 
+  const resultsComponent = (
+    <div className="results">
+      <p>{decision.firstChoice.name}</p>
+      <p>
+        {factors.reduce(
+          (prev, cur) => prev + cur.firstChoice * cur.importance,
+          0
+        )}
+      </p>
+      <p>{decision.secondChoice.name}</p>
+      <p>
+        {factors.reduce(
+          (prev, cur) => prev + cur.secondChoice * cur.importance,
+          0
+        )}
+      </p>
+    </div>
+  );
+
   return (
     <div className="Decision">
       {factorsComponent}
-      ### total scorll at the bottom
       {newFactorComponent}
-      {decision.firstChoice.name} / {decision.firstChoice.name}
-      <br />
-      {factors.reduce(
-        (prev, cur) => prev + cur.firstChoice * cur.importance,
-        0
-      )}
+      {resultsComponent}
     </div>
   );
 };
