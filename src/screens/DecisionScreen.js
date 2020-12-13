@@ -24,7 +24,7 @@ const DecisionScreen = ({ match }) => {
     return <Redirect to="/" />;
   }
 
-  const updateFactory = (e, index, prop) => {
+  const updateFactorsProperty = (e, index, prop) => {
     const updatedFactors = [...factors];
     updatedFactors[index][prop] = e.target.value;
     setFactors(updatedFactors);
@@ -59,7 +59,7 @@ const DecisionScreen = ({ match }) => {
             max="10"
             title="Importance"
             value={factor.importance}
-            onChange={(e) => updateFactory(e, index, "importance")}
+            onChange={(e) => updateFactorsProperty(e, index, "importance")}
           />
 
           <p>Dalas: {factor.firstChoice * factor.importance}</p>
@@ -68,7 +68,7 @@ const DecisionScreen = ({ match }) => {
             min="0"
             max="10"
             value={factor.firstChoice}
-            onChange={(e) => updateFactory(e, index, "firstChoice")}
+            onChange={(e) => updateFactorsProperty(e, index, "firstChoice")}
           />
 
           <p>Detrois: {factor.secondChoice * factor.importance}</p>
@@ -77,7 +77,7 @@ const DecisionScreen = ({ match }) => {
             min="0"
             max="10"
             value={factor.secondChoice}
-            onChange={(e) => updateFactory(e, index, "secondChoice")}
+            onChange={(e) => updateFactorsProperty(e, index, "secondChoice")}
           />
         </div>
       ))}
@@ -103,6 +103,11 @@ const DecisionScreen = ({ match }) => {
       ### total scorll at the bottom
       {newFactorComponent}
       {decision.firstChoice.name} / {decision.firstChoice.name}
+      <br />
+      {factors.reduce(
+        (prev, cur) => prev + cur.firstChoice * cur.importance,
+        0
+      )}
     </div>
   );
 };
