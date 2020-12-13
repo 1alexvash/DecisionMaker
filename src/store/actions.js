@@ -30,6 +30,8 @@ const actions = {
         (prev, cur) => prev + cur.secondChoice * cur.importance,
         0
       );
+
+      localStorage.decisions = JSON.stringify(state.decisions);
     }
   ),
   newFactorSave: action((state, { index, name }) => {
