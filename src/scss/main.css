@@ -186,6 +186,14 @@ body {
   border-radius: 16px;
 }
 
+.App .Decision .factors .factor {
+  margin: 15px;
+  padding: 15px;
+  border: 2px solid #333;
+  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#d9d9d9));
+  background: linear-gradient(#efefef, #d9d9d9);
+}
+
 .App .Decision .new-factor {
   margin-top: 20px;
   display: -webkit-box;

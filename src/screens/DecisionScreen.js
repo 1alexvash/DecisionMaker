@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { useStoreState } from "easy-peasy";
 import { Redirect } from "react-router-dom";
@@ -10,42 +10,59 @@ const DecisionScreen = ({ match }) => {
     (decision) => decision.url === match.params.id
   );
 
-  if (!decision) {
-    return <Redirect to="/" />;
-  }
-
-  const factors = [
+  const [factors, setFactors] = useState([
     {
       name: "Weather",
       importance: 0,
       firstChoice: 0,
       secondChoice: 0,
     },
-  ];
+  ]);
+
+  if (!decision) {
+    return <Redirect to="/" />;
+  }
+
+  const updateFactory = (e, index, prop) => {
+    const newFactors = [...factors];
+    newFactors[index][prop] = e.target.value;
+    setFactors(newFactors);
+  };
 
   return (
     <div className="Decision">
       <div className="factors">
-        {factors.map((factor) => (
-          <div
-            className="factor"
-            style={{
-              background: "#eee",
-              padding: "20px",
-              margin: "20px",
-              border: "2px solid #333",
-            }}
-          >
+        {factors.map((factor, index) => (
+          <div className="factor" key={index}>
             <p>
               {factor.name}: {factor.importance}
             </p>
-            <input type="range" min="0" max="10" title="Importance" />
+            <input
+              type="range"
+              min="0"
+              max="10"
+              title="Importance"
+              value={factor.importance}
+              onChange={(e) => updateFactory(e, index, "importance")}
+            />
 
-            <p>Dalas [3]</p>
-            <input type="range" min="0" max="10" />
+            <p>Dalas: {factor.firstChoice * factor.importance}</p>
+            <input
+              type="range"
+              min="0"
+              max="10"
+              value={factor.firstChoice}
+              onChange={(e) => updateFactory(e, index, "firstChoice")}
+            />
 
-            <p>Detrois [2]</p>
-            <input type="range" min="0" max="10" />
+            <p>Detrois: {factor.secondChoice * factor.importance}</p>
+            <input
+              type="range"
+              min="0"
+              max="10"
+              value={factor.secondChoice}
+              onChange={(e) => updateFactory(e, index, "secondChoice")}
+            />
           </div>
         ))}
       </div>
