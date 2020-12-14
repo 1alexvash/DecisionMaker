@@ -1,6 +1,6 @@
 const defaultDecisions = [
   {
-    url: "test",
+    url: "Apples-Oranges",
     firstChoice: {
       score: 0,
       name: "Apples",

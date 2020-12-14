@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { Link } from "react-router-dom";
 import logoImg from "../images/logo.png";
@@ -9,13 +9,21 @@ const Header = ({ history }) => {
   return (
     <header className="Header">
       {pathname === "/" ? (
-        <img src={logoImg} className="logo" alt="logo" />
-      ) : (
-        <Link to="/">
+        <Fragment>
           <img src={logoImg} className="logo" alt="logo" />
-        </Link>
+          <p>Decision Maker</p>
+        </Fragment>
+      ) : (
+        <Fragment>
+          <Link to="/">
+            <img src={logoImg} className="logo" alt="logo" />
+          </Link>
+          <p>
+            Decision Maker: <br />
+            {pathname.split("/")[2].replace(/-/g, " | ")}
+          </p>
+        </Fragment>
       )}
-      Decision Maker
     </header>
   );
 };
