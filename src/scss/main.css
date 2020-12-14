@@ -199,6 +199,26 @@ body {
   border-radius: 16px;
 }
 
+.App .Decision .warning {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #333;
+  border: 1px solid black;
+}
+
+.App .Decision .warning img {
+  width: 48px;
+  margin: 8px;
+}
+
 .App .Decision .factors .factor {
   margin: 15px;
   padding: 15px;

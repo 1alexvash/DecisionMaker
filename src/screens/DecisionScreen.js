@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { Redirect } from "react-router-dom";
 
+import warningImg from "../images/warning.png";
+
 const DecisionScreen = ({ match }) => {
   const { decisions } = useStoreState((state) => state);
   const { updateFactorsProperty, newFactorSave } = useStoreActions(
@@ -35,6 +37,12 @@ const DecisionScreen = ({ match }) => {
 
   const factorsComponent = (
     <div className="factors">
+      {decision.factors.length === 0 && (
+        <div className="warning">
+          <img src={warningImg} alt="warning" />
+          There are no any factors at the moment. You can add one down bellow.
+        </div>
+      )}
       {decision.factors.map((factor, index) => (
         <div className="factor" key={index}>
           <p>
