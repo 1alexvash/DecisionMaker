@@ -12,6 +12,7 @@ const actions = {
         score: 0,
         name: secondOption,
       },
+      factors: [],
     });
   }),
   setCurrentDecision: action((state, payload) => {
