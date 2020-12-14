@@ -14,6 +14,8 @@ const actions = {
       },
       factors: [],
     });
+
+    localStorage.decisions = JSON.stringify(state.decisions);
   }),
   setCurrentDecision: action((state, payload) => {
     state.decision = payload;
