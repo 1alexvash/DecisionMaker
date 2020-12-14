@@ -23,8 +23,21 @@ const HomeScreen = () => {
       return;
     }
 
+    for (let i = 0; i < decisions.length; i++) {
+      const decision = decisions[i];
+      if (
+        decision.firstChoice.name === firstOption &&
+        decision.secondChoice.name === secondOption
+      ) {
+        alert("The following pair already exists");
+        return "";
+      }
+    }
+
     addDecision({ firstOption, secondOption });
     setModal(false);
+    setFirstOption("");
+    setSecondOption("");
   };
 
   const decisionsComponent = (

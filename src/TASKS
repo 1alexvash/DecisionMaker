@@ -1,3 +1,15 @@
-Build HomeScreen interface
-Bind store.js logic to it
+Show in the header URL of current category
+
+Prevent creating decision with the same value
+
+Range change colors
+
+Add home button
+
+Add delete decision category
+
+Draw logo
+
 Make some margin for the plus button so it is always visible
+
+Check mobile version
