@@ -12,6 +12,14 @@ body {
   .Header {
     padding: 10px 15px;
     background: linear-gradient(white, lightgray);
+    display: flex;
+    align-items: center;
+    .logo {
+      width: 64px;
+      margin-right: 10px;
+      border: 2px solid black;
+      border-radius: 4px;
+    }
   }
   .Home {
     padding: 20px;

@@ -9,11 +9,13 @@ import store from "./store/store";
 
 import "./scss/main.css";
 
+import Header from "./components/Header";
+
 const App = () => {
   return (
     <div className="App">
       <Router>
-        <header className="Header">Decision Maker</header>
+        <Route component={Header} />
         <Route exact={true} path="/" component={HomeScreen}></Route>
         <Route path="/decision/:id" component={DecisionScreen}></Route>
       </Router>

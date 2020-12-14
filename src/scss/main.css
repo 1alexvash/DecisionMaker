@@ -34,6 +34,19 @@ body {
   padding: 10px 15px;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(lightgray));
   background: linear-gradient(white, lightgray);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .Header .logo {
+  width: 64px;
+  margin-right: 10px;
+  border: 2px solid black;
+  border-radius: 4px;
 }
 
 .App .Home {
