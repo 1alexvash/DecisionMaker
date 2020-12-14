@@ -9,11 +9,15 @@ body {
 .App {
   width: 360px;
   margin: auto;
+  @include responsive(400px) {
+    width: 100%;
+  }
   .Header {
     padding: 10px 15px;
     background: linear-gradient(white, lightgray);
     display: flex;
     align-items: center;
+    box-shadow: 2px 3px 7px rgba(black, 0.5);
     .logo {
       width: 64px;
       margin-right: 10px;
@@ -61,11 +65,15 @@ body {
       bottom: 15px;
       left: 50%;
       transform: translate(-50%, 0);
+
       img {
         width: 80px;
         box-shadow: 2px 2px 4px black;
         border-radius: 50%;
         transition: 0.3s;
+        @include responsive(400px) {
+          width: 64px;
+        }
         &:hover {
           cursor: pointer;
           transform: scale(1.1);
@@ -166,6 +174,7 @@ body {
       }
     }
     .new-factor {
+      padding: 0 10px;
       margin-top: 20px;
       display: flex;
       justify-content: space-between;

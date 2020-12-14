@@ -30,6 +30,12 @@ body {
   margin: auto;
 }
 
+@media (max-width: 400px) {
+  .App {
+    width: 100%;
+  }
+}
+
 .App .Header {
   padding: 10px 15px;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(lightgray));
@@ -40,6 +46,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.5);
 }
 
 .App .Header .logo {
@@ -114,6 +122,12 @@ body {
   border-radius: 50%;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+@media (max-width: 400px) {
+  .App .Home .plus img {
+    width: 64px;
+  }
 }
 
 .App .Home .plus img:hover {
@@ -232,6 +246,7 @@ body {
 }
 
 .App .Decision .new-factor {
+  padding: 0 10px;
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
