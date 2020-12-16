@@ -52,7 +52,12 @@ const DecisionScreen = ({ match }) => {
             src={trashImg}
             alt="trash"
             title="Delete this factor"
-            onClick={() => deleteFactor({ index, name: factor.name })}
+            onClick={() =>
+              deleteFactor({
+                decisionIndex: decisions.indexOf(decision),
+                name: factor.name,
+              })
+            }
           />
           <p>
             {factor.name}: {factor.importance}

@@ -24,13 +24,13 @@ const actions = {
   setCurrentDecision: action((state, payload) => {
     state.decision = payload;
   }),
-  deleteFactor: action((state, { index, name }) => {
-    console.log("index:", index);
-    console.log("name:", name);
-    const decision = state.decisions[index];
-    debug(decision);
-    debug(decision.factors);
-    debug(decision.factors.filter((factor) => factor.name !== name));
+  deleteFactor: action((state, { decisionIndex, name }) => {
+    const decision = state.decisions[decisionIndex];
+    const updatedFactors = decision.factors.filter(
+      (factor) => factor.name !== name
+    );
+    decision.factors = updatedFactors;
+    localStorage.decisions = JSON.stringify(state.decisions);
   }),
   updateFactorsProperty: action(
     (state, { value, decisionIndex, factorIndex, property }) => {
