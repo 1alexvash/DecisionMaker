@@ -1,5 +1,9 @@
 import { action } from "easy-peasy";
 
+const debug = (data) => {
+  console.log(JSON.parse(JSON.stringify(data)));
+};
+
 const actions = {
   addDecision: action((state, { firstOption, secondOption }) => {
     state.decisions.push({
@@ -19,6 +23,14 @@ const actions = {
   }),
   setCurrentDecision: action((state, payload) => {
     state.decision = payload;
+  }),
+  deleteFactor: action((state, { index, name }) => {
+    console.log("index:", index);
+    console.log("name:", name);
+    const decision = state.decisions[index];
+    debug(decision);
+    debug(decision.factors);
+    debug(decision.factors.filter((factor) => factor.name !== name));
   }),
   updateFactorsProperty: action(
     (state, { value, decisionIndex, factorIndex, property }) => {
@@ -44,6 +56,7 @@ const actions = {
       firstChoice: 0,
       secondChoice: 0,
     });
+    localStorage.decisions = JSON.stringify(state.decisions);
   }),
 };
 

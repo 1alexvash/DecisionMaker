@@ -234,11 +234,27 @@ body {
 }
 
 .App .Decision .factors .factor {
+  position: relative;
   margin: 15px;
   padding: 15px;
   border: 2px solid #333;
   background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#d9d9d9));
   background: linear-gradient(#efefef, #d9d9d9);
+}
+
+.App .Decision .factors .factor img {
+  position: absolute;
+  width: 32px;
+  top: 7px;
+  right: 7px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.App .Decision .factors .factor img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .App .Decision .factors .factor input[type="range"] {

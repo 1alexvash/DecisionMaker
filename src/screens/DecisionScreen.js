@@ -4,12 +4,15 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 import { Redirect } from "react-router-dom";
 
 import warningImg from "../images/warning.png";
+import trashImg from "../images/trash.png";
 
 const DecisionScreen = ({ match }) => {
   const { decisions } = useStoreState((state) => state);
-  const { updateFactorsProperty, newFactorSave } = useStoreActions(
-    (actions) => actions
-  );
+  const {
+    deleteFactor,
+    updateFactorsProperty,
+    newFactorSave,
+  } = useStoreActions((actions) => actions);
 
   const decision = decisions.find(
     (decision) => decision.url === match.params.id
@@ -45,6 +48,12 @@ const DecisionScreen = ({ match }) => {
       )}
       {decision.factors.map((factor, index) => (
         <div className="factor" key={index}>
+          <img
+            src={trashImg}
+            alt="trash"
+            title="Delete this factor"
+            onClick={() => deleteFactor({ index, name: factor.name })}
+          />
           <p>
             {factor.name}: {factor.importance}
           </p>
@@ -63,7 +72,6 @@ const DecisionScreen = ({ match }) => {
               })
             }
           />
-
           <p>
             {decision.firstChoice.name}:{" "}
             {factor.firstChoice * factor.importance}
@@ -82,7 +90,6 @@ const DecisionScreen = ({ match }) => {
               })
             }
           />
-
           <p>
             {decision.secondChoice.name}:{" "}
             {factor.secondChoice * factor.importance}
