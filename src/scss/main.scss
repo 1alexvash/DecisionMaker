@@ -41,6 +41,7 @@ body {
   .Home {
     padding: 20px;
     .decisions {
+      padding-bottom: 75px;
       .decision {
         padding: 10px;
         background: linear-gradient((white, #999));
@@ -74,7 +75,7 @@ body {
       }
     }
     .plus {
-      position: absolute;
+      position: fixed;
       bottom: 15px;
       left: 50%;
       transform: translate(-50%, 0);

@@ -83,6 +83,10 @@ body {
   padding: 20px;
 }
 
+.App .Home .decisions {
+  padding-bottom: 75px;
+}
+
 .App .Home .decisions .decision {
   padding: 10px;
   background: -webkit-gradient(linear, left top, left bottom, from(white), to(#999));
@@ -130,7 +134,7 @@ body {
 }
 
 .App .Home .plus {
-  position: absolute;
+  position: fixed;
   bottom: 15px;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
