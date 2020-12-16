@@ -13,19 +13,16 @@ import Header from "./components/Header";
 
 const App = () => {
   return (
-    <div className="App">
-      <Router>
-        <Route component={Header} />
-        <Route exact={true} path="/" component={HomeScreen}></Route>
-        <Route path="/decision/:id" component={DecisionScreen}></Route>
-      </Router>
-    </div>
+    <StoreProvider store={store}>
+      <div className="App">
+        <Router>
+          <Route component={Header} />
+          <Route exact={true} path="/" component={HomeScreen}></Route>
+          <Route path="/decision/:id" component={DecisionScreen}></Route>
+        </Router>
+      </div>
+    </StoreProvider>
   );
 };
 
-// eslint-disable-next-line
-export default () => (
-  <StoreProvider store={store}>
-    <App />
-  </StoreProvider>
-);
+export default () => <App />;

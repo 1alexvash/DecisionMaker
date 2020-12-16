@@ -24,6 +24,14 @@ const actions = {
   setCurrentDecision: action((state, payload) => {
     state.decision = payload;
   }),
+  deleteDecision: action((state, payload) => {
+    if (window.confirm("Are you sure you are no gonan regret it?")) {
+      state.decisions = state.decisions.filter(
+        (decision) => decision.url !== payload
+      );
+      localStorage.decisions = JSON.stringify(state.decisions);
+    }
+  }),
   deleteFactor: action((state, { decisionIndex, name }) => {
     const decision = state.decisions[decisionIndex];
     const updatedFactors = decision.factors.filter(

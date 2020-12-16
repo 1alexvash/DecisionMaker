@@ -48,6 +48,9 @@ body {
           align-items: center;
   -webkit-box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
           box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .App .Header .logo {
@@ -55,6 +58,25 @@ body {
   margin-right: 10px;
   border: 2px solid black;
   border-radius: 4px;
+}
+
+.App .Header .text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.App .Header .trash {
+  cursor: pointer;
+  width: 40px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.App .Header .trash:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .App .Home {
@@ -245,8 +267,8 @@ body {
 .App .Decision .factors .factor img {
   position: absolute;
   width: 32px;
-  top: 7px;
-  right: 7px;
+  top: 5px;
+  right: 5px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }

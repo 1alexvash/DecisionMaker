@@ -18,11 +18,24 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 1px 2px 8px rgba(black, 0.5);
+    justify-content: space-between;
     .logo {
       width: 64px;
       margin-right: 10px;
       border: 2px solid black;
       border-radius: 4px;
+    }
+    .text {
+      flex: 1;
+    }
+    .trash {
+      cursor: pointer;
+      width: 40px;
+      transition: 0.3s;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
     }
   }
   .Home {
@@ -172,8 +185,8 @@ body {
         img {
           position: absolute;
           width: 32px;
-          top: 7px;
-          right: 7px;
+          top: 5px;
+          right: 5px;
           transition: 0.3s;
           &:hover {
             cursor: pointer;
