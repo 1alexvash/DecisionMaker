@@ -58,13 +58,21 @@ const actions = {
     }
   ),
   newFactorSave: action((state, { index, name }) => {
-    state.decisions[index].factors.push({
-      name,
-      importance: 2,
-      firstChoice: 0,
-      secondChoice: 0,
-    });
-    localStorage.decisions = JSON.stringify(state.decisions);
+    const listOfFactors = state.decisions[index].factors.map(
+      (factor) => factor.name
+    );
+
+    if (listOfFactors.indexOf(name) >= 0) {
+      alert("Can't create a factor with the same name");
+    } else {
+      state.decisions[index].factors.push({
+        name,
+        importance: 2,
+        firstChoice: 0,
+        secondChoice: 0,
+      });
+      localStorage.decisions = JSON.stringify(state.decisions);
+    }
   }),
 };
 
