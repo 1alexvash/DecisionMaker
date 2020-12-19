@@ -307,6 +307,8 @@ body {
   height: 100%;
   text-align: center;
   color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .App .Decision .results .bar1 .text,

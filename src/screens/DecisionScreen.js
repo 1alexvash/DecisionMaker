@@ -134,18 +134,19 @@ const DecisionScreen = ({ match }) => {
   return (
     <div className="Decision">
       {factorsComponent}
-      <ResultsComponent decision={decision} />
+      {decision.factors.length > 0 && <ResultsComponent decision={decision} />}
+
       {newFactorComponent}
     </div>
   );
 };
 
 const ResultsComponent = ({ decision }) => {
-  const getPercentage = (score) => {
+  function getPercentage(score) {
     return (
       (score / (decision.firstChoice.score + decision.secondChoice.score)) * 100
     );
-  };
+  }
 
   return (
     <div className="results">

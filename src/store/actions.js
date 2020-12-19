@@ -1,8 +1,6 @@
 import { action } from "easy-peasy";
 
-const debug = (data) => {
-  console.log(JSON.parse(JSON.stringify(data)));
-};
+// const debug = (data) => console.log(JSON.parse(JSON.stringify(data)));
 
 const actions = {
   addDecision: action((state, { firstOption, secondOption }) => {
@@ -25,7 +23,7 @@ const actions = {
     state.decision = payload;
   }),
   deleteDecision: action((state, payload) => {
-    if (window.confirm("Are you sure you are no gonan regret it?")) {
+    if (window.confirm("Are you sure you are no gonna regret it?")) {
       state.decisions = state.decisions.filter(
         (decision) => decision.url !== payload
       );

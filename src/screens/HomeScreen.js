@@ -42,6 +42,12 @@ const HomeScreen = () => {
 
   const decisionsComponent = (
     <div className="decisions">
+      {decisions.length === 0 && (
+        <div className="warning">
+          <p>Let's add the first decision</p>
+          <p>Press the button down bellow</p>
+        </div>
+      )}
       {decisions.map((decision) => (
         <Link
           to={`/decision/${decision.url}`}
