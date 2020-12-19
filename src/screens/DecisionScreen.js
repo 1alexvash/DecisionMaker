@@ -131,20 +131,46 @@ const DecisionScreen = ({ match }) => {
     </form>
   );
 
-  const resultsComponent = (
-    <div className="results">
-      <p>{decision.firstChoice.name}</p>
-      <p>{decision.firstChoice.score}</p>
-      <p>{decision.secondChoice.name}</p>
-      <p>{decision.secondChoice.score}</p>
-    </div>
-  );
-
   return (
     <div className="Decision">
       {factorsComponent}
+      <ResultsComponent decision={decision} />
       {newFactorComponent}
-      {resultsComponent}
+    </div>
+  );
+};
+
+const ResultsComponent = ({ decision }) => {
+  const getPercentage = (score) => {
+    return (
+      (score / (decision.firstChoice.score + decision.secondChoice.score)) * 100
+    );
+  };
+
+  return (
+    <div className="results">
+      <div
+        className="bar1"
+        style={{
+          width: `${getPercentage(decision.firstChoice.score)}%`,
+        }}
+        title={`${Math.round(getPercentage(decision.firstChoice.score))}%`}
+      >
+        <div className="text">
+          {decision.firstChoice.name} [{decision.firstChoice.score}]
+        </div>
+      </div>
+      <div
+        className="bar2"
+        style={{
+          width: `${getPercentage(decision.secondChoice.score)}%`,
+        }}
+        title={`${Math.round(getPercentage(decision.secondChoice.score))}%`}
+      >
+        <div className="text">
+          {decision.secondChoice.name} [{decision.secondChoice.score}]
+        </div>
+      </div>
     </div>
   );
 };
