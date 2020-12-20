@@ -2,6 +2,8 @@
 
 Decision making process simplified
 
+![app idea](https://i.imgur.com/adEHLke.png)
+
 ## Installing the project && running on the local machine
 
 ```js
