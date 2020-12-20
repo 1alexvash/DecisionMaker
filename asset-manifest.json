@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/DecisionMaker/static/css/main.5021e50c.chunk.css",
+    "main.js": "/DecisionMaker/static/js/main.05187804.chunk.js",
+    "main.js.map": "/DecisionMaker/static/js/main.05187804.chunk.js.map",
+    "runtime-main.js": "/DecisionMaker/static/js/runtime-main.89a4e98e.js",
+    "runtime-main.js.map": "/DecisionMaker/static/js/runtime-main.89a4e98e.js.map",
+    "static/js/2.aa15927c.chunk.js": "/DecisionMaker/static/js/2.aa15927c.chunk.js",
+    "static/js/2.aa15927c.chunk.js.map": "/DecisionMaker/static/js/2.aa15927c.chunk.js.map",
+    "static/js/3.200453d3.chunk.js": "/DecisionMaker/static/js/3.200453d3.chunk.js",
+    "static/js/3.200453d3.chunk.js.map": "/DecisionMaker/static/js/3.200453d3.chunk.js.map",
+    "index.html": "/DecisionMaker/index.html",
+    "static/css/main.5021e50c.chunk.css.map": "/DecisionMaker/static/css/main.5021e50c.chunk.css.map",
+    "static/js/2.aa15927c.chunk.js.LICENSE.txt": "/DecisionMaker/static/js/2.aa15927c.chunk.js.LICENSE.txt",
+    "static/media/cross.aa2e7e9f.png": "/DecisionMaker/static/media/cross.aa2e7e9f.png",
+    "static/media/logo.2662e726.png": "/DecisionMaker/static/media/logo.2662e726.png",
+    "static/media/plus.27f0729d.png": "/DecisionMaker/static/media/plus.27f0729d.png",
+    "static/media/trash-dark.417d2234.png": "/DecisionMaker/static/media/trash-dark.417d2234.png",
+    "static/media/trash.296c6057.png": "/DecisionMaker/static/media/trash.296c6057.png",
+    "static/media/warning.481e8e9b.png": "/DecisionMaker/static/media/warning.481e8e9b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89a4e98e.js",
+    "static/js/2.aa15927c.chunk.js",
+    "static/css/main.5021e50c.chunk.css",
+    "static/js/main.05187804.chunk.js"
+  ]
+}
