@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import { StoreProvider } from "easy-peasy";
 
 import HomeScreen from "./screens/HomeScreen";
@@ -16,8 +16,8 @@ const App = () => {
     <StoreProvider store={store}>
       <div className="App">
         <Router>
-          <Route component={Header} />
-          <Route exact={true} path="/" component={HomeScreen}></Route>
+          <Route path="/" component={Header} />
+          <Route path="/" exact={true} component={HomeScreen}></Route>
           <Route path="/decision/:id" component={DecisionScreen}></Route>
         </Router>
       </div>

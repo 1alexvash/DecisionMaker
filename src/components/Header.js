@@ -32,7 +32,7 @@ const Header = ({ history }) => {
           </Link>
           <p className="text">
             Decision Maker: <br />
-            {decisionName.replace(/-/g, " | ")}
+            {decisionName && decisionName.replace(/-/g, " | ")}
           </p>
           <img
             src={trashImgDark}
